@@ -7,18 +7,44 @@
     app:layout_constrainedWidth="false"
     tools:context=".ResultActivity">
 
-    <TextView
-        android:id="@+id/tvFeeResult"
-        android:layout_width="300dp"
-        android:layout_height="144dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/text_fee_result"
-        app:autoSizeMaxTextSize="100sp"
-        app:autoSizeMinTextSize="16sp"
-        app:autoSizeStepGranularity="1sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFeeResult"
+                android:layout_width="300dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/open_sans"
+                android:gravity="start"
+                android:text="@string/text_fee_result"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeMinTextSize="16sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="350dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/open_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/text_total_amount"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ package com.imagina.calculadorahipoteca
 import android.content.Intent
 import android.os.Bundle
 import android.widget.SeekBar
+import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
 import com.imagina.calculadorahipoteca.Constants.Companion.AMOUNT_VALUE
 import com.imagina.calculadorahipoteca.Constants.Companion.RATE_VALUE
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val dec = NumberFormat.getNumberInstance(Locale.getDefault())
         val dfRate = DecimalFormat("0.00")
 
@@ -28,43 +30,47 @@ class MainActivity : AppCompatActivity() {
         sbYears.setProgress(5)
         textYears.setText("15")
 
-        sbAmount.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        sbAmount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val amount = seekBar.progress * 10000 + 50000
                 textAmount.setText(dec.format(amount))
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {// Emtpy Function
+            }
         })
 
-        sbRate.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        sbRate.setOnSeekBarChangeListener(object: OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val rate:Double = seekBar.progress.toDouble() / 20
 
                 textRate.setText(dfRate.format(rate).toString())
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            }
         })
 
-        sbYears.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        sbYears.setOnSeekBarChangeListener(object: OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val rate = seekBar.progress + 10
                 textYears.setText(rate.toString())
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            }
         })
 
 
         bEvaluate.setOnClickListener {
             val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra(AMOUNT_VALUE, dec.parse(textAmount.text.toString()).toInt())
+            intent.putExtra(AMOUNT_VALUE, dec.parse(textAmount.text.toString())?.toInt())
             intent.putExtra(RATE_VALUE, textRate.text.toString().toDouble())
             intent.putExtra(YEARS_VALUE, textYears.text.toString().toInt())
             startActivity(intent)
-
-
         }
     }
 }

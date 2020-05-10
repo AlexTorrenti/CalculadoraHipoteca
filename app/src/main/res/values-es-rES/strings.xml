@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cuotas</string>
+    <string name="text_welcome">Bienvenid@ a la <b>Calculadora de Hipotecas</b>. Introduce tus datos y pulsa <b>calcular</b> para ver la cuota.</string>
+    <string name="text_default_amount">100000</string>
+    <string name="button_evaluate">Calcular Cuota</string>
+    <string name="text_amount">Cantidad (en €)</string>
+    <string name="text_rate">Tipo de Interés (%)</string>
+    <string name="text_years">Número de Años</string>
+    <string name="text_fee_result">Tu cuota mensual se queda en</string>
+    <string name="text_total_amount">"Finalmente, acabarás pagando "</string>
+</resources>
