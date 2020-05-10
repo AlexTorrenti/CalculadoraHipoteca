@@ -10,10 +10,10 @@ import org.junit.Test
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class FeeCalculatorTest {
-
     @Test
     fun feeCalculationTest() {
-        val fee = FeeCalculator.calculateFee(150000, 1.0, 15*12)
+        val feeCalculator = FeeCalculator()
+        val fee = feeCalculator.calculateFee(150000, 1.0, 15*12)
 
         assertEquals(897.74, fee, 0.01)
     }

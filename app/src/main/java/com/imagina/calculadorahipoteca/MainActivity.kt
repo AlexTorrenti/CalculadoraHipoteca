@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         sbRate.setOnSeekBarChangeListener(object: OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val rate:Double = seekBar.progress.toDouble() / 20
-
                 textRate.setText(dfRate.format(rate).toString())
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) { // empty Function

@@ -30,7 +30,7 @@ class ResultActivity : AppCompatActivity() {
         val years = intent.getIntExtra(YEARS_VALUE, 10)
 
         val time = years * 12
-        val fee = FeeCalculator.calculateFee(amount, rate, time)
+        val fee = FeeCalculator().calculateFee(amount, rate, time)
 
         tvFeeResult.append(" " + dec.format(fee) + currencySymbol)
         tvTotalAmount.append(dec.format(fee * time) + currencySymbol)
@@ -39,7 +39,7 @@ class ResultActivity : AppCompatActivity() {
             val newTextView = TextView(this)
 
             val newRate = rate-(i.toDouble()/10)
-            newTextView.text = applicationContext.getString(R.string.table_comparison,dec.format(newRate),dec.format(FeeCalculator.calculateFee(amount, newRate, time)),currencySymbol)
+            newTextView.text = applicationContext.getString(R.string.table_comparison,dec.format(newRate),dec.format(FeeCalculator().calculateFee(amount, newRate, time)),currencySymbol)
             newTextView.textSize = 20.0.toFloat()
             newTextView.setPadding(40, 0, 40, 10)
 
