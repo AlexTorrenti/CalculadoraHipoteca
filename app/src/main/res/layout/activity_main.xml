@@ -44,9 +44,11 @@
         android:fontFamily="@font/open_sans"
         android:inputType="number"
         android:text="@string/text_default_amount"
+        android:hint="@string/text_amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textWelcome" />
+        app:layout_constraintTop_toBottomOf="@+id/textWelcome"
+        android:autofillHints="@string/text_amount" />
 
     <SeekBar
         android:id="@+id/sbAmount"
@@ -83,10 +85,12 @@
         android:fontFamily="@font/open_sans"
         android:inputType="number"
         android:text="@string/text_default_amount"
+        android:hint="@string/text_rate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sbAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/sbAmount"
+        android:autofillHints="@string/text_rate" />
 
     <SeekBar
         android:id="@+id/sbRate"
@@ -110,10 +114,12 @@
         android:fontFamily="@font/open_sans"
         android:inputType="number"
         android:text="@string/text_default_amount"
+        android:hint="@string/text_years"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sbAmount" />
+        app:layout_constraintTop_toBottomOf="@+id/sbAmount"
+        android:autofillHints="@string/text_years" />
 
     <TextView
         android:id="@+id/tvRate"

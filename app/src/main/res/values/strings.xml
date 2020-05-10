@@ -8,4 +8,6 @@
     <string name="text_default_amount">100000</string>
     <string name="button_evaluate">Calculate Fee</string>
     <string name="text_fee_result">Your monthly fee is</string>
+    <string name="starter_amount">15</string>
+    <string name="table_comparison">%1s : %2s%3s</string>
 </resources>

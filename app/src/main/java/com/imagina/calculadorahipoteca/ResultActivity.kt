@@ -20,7 +20,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
         val locale = Locale.getDefault()
-        val currencySymbol = Currency.getInstance(locale).getSymbol()
+        val currencySymbol = Currency.getInstance(locale).symbol
         val nf = NumberFormat.getNumberInstance(locale)
         val dec = nf as DecimalFormat
         dec.applyPattern("#,##0.00")
@@ -39,7 +39,7 @@ class ResultActivity : AppCompatActivity() {
             val newTextView = TextView(this)
 
             val newRate = rate-(i.toDouble()/10)
-            newTextView.text = "${dec.format(newRate)} : ${dec.format(FeeCalculator.calculateFee(amount, newRate, time))} ${currencySymbol}"
+            newTextView.text = applicationContext.getString(R.string.table_comparison,dec.format(newRate),dec.format(FeeCalculator.calculateFee(amount, newRate, time)),currencySymbol)
             newTextView.textSize = 20.0.toFloat()
             newTextView.setPadding(40, 0, 40, 10)
 

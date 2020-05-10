@@ -9,4 +9,6 @@
     <string name="text_years">Número de Años</string>
     <string name="text_fee_result">Tu cuota mensual se queda en</string>
     <string name="text_total_amount">"Finalmente, acabarás pagando "</string>
+    <string name="starter_amount">15</string>
+    <string name="table_comparison">%1s : %2s%3s</string>
 </resources>

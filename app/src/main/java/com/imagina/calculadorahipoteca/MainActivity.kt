@@ -23,21 +23,21 @@ class MainActivity : AppCompatActivity() {
         val dec = NumberFormat.getNumberInstance(Locale.getDefault())
         val dfRate = DecimalFormat("0.00")
 
-        sbAmount.setProgress(10)
+        sbAmount.progress = 10
         textAmount.setText(dec.format(150000))
-        sbRate.setProgress(20)
+        sbRate.progress = 20
         textRate.setText(dfRate.format(1.00).toString())
-        sbYears.setProgress(5)
-        textYears.setText("15")
+        sbYears.progress = 5
+        textYears.setText(R.string.starter_amount)
 
         sbAmount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 val amount = seekBar.progress * 10000 + 50000
                 textAmount.setText(dec.format(amount))
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // empty Function
             }
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {// Emtpy Function
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {// empty Function
             }
         })
 
@@ -47,9 +47,9 @@ class MainActivity : AppCompatActivity() {
 
                 textRate.setText(dfRate.format(rate).toString())
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // empty Function
             }
-            override fun onStopTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { // empty Function
             }
         })
 
@@ -58,9 +58,9 @@ class MainActivity : AppCompatActivity() {
                 val rate = seekBar.progress + 10
                 textYears.setText(rate.toString())
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            override fun onStartTrackingTouch(seekBar: SeekBar?) { // empty Function
             }
-            override fun onStopTrackingTouch(seekBar: SeekBar?) { // Emtpy Function
+            override fun onStopTrackingTouch(seekBar: SeekBar?) { // empty Function
             }
         })
 
