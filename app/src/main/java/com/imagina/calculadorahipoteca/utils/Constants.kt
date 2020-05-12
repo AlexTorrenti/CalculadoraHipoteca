@@ -1,4 +1,4 @@
-package com.imagina.calculadorahipoteca
+package com.imagina.calculadorahipoteca.utils
 
 sealed class Constants {
     companion object {

@@ -1,6 +1,6 @@
 package com.imagina.calculadorahipoteca
 
-import com.imagina.calculadorahipoteca.com.imagina.calculadorahipoteca.utils.FeeCalculator
+import com.imagina.calculadorahipoteca.utils.FeeCalculator
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
-import com.imagina.calculadorahipoteca.Constants.Companion.AMOUNT_VALUE
-import com.imagina.calculadorahipoteca.Constants.Companion.RATE_VALUE
-import com.imagina.calculadorahipoteca.Constants.Companion.YEARS_VALUE
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.AMOUNT_VALUE
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.RATE_VALUE
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.YEARS_VALUE
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.DecimalFormat
 import java.text.NumberFormat
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         textRate.setText(dfRate.format(1.00).toString())
         sbYears.progress = 5
         textYears.setText(R.string.starter_amount)
+
 
         sbAmount.setOnSeekBarChangeListener(object : OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {

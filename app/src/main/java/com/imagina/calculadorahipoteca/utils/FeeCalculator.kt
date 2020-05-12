@@ -1,4 +1,4 @@
-package com.imagina.calculadorahipoteca.com.imagina.calculadorahipoteca.utils
+package com.imagina.calculadorahipoteca.utils
 
 import kotlin.math.pow
 

@@ -4,10 +4,10 @@ package com.imagina.calculadorahipoteca
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.imagina.calculadorahipoteca.Constants.Companion.AMOUNT_VALUE
-import com.imagina.calculadorahipoteca.Constants.Companion.RATE_VALUE
-import com.imagina.calculadorahipoteca.Constants.Companion.YEARS_VALUE
-import com.imagina.calculadorahipoteca.com.imagina.calculadorahipoteca.utils.FeeCalculator
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.AMOUNT_VALUE
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.RATE_VALUE
+import com.imagina.calculadorahipoteca.utils.Constants.Companion.YEARS_VALUE
+import com.imagina.calculadorahipoteca.utils.FeeCalculator
 import kotlinx.android.synthetic.main.activity_result.*
 import java.text.DecimalFormat
 import java.text.NumberFormat
@@ -34,12 +34,13 @@ class ResultActivity : AppCompatActivity() {
 
         tvFeeResult.append(" " + dec.format(fee) + currencySymbol)
         tvTotalAmount.append(dec.format(fee * time) + currencySymbol)
-        
+
         (1..5).forEach { i ->
             val newTextView = TextView(this)
 
             val newRate = rate-(i.toDouble()/10)
-            newTextView.text = applicationContext.getString(R.string.table_comparison,dec.format(newRate),dec.format(FeeCalculator().calculateFee(amount, newRate, time)),currencySymbol)
+            newTextView.text = applicationContext.getString(R.string.table_comparison,dec.format(newRate),dec.format(
+                FeeCalculator().calculateFee(amount, newRate, time)),currencySymbol)
             newTextView.textSize = 20.0.toFloat()
             newTextView.setPadding(40, 0, 40, 10)
 
